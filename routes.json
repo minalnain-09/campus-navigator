@@ -1,0 +1,471 @@
+[
+  {
+    "id": "entry-gate__division-of-admission-block",
+    "from": "entry-gate",
+    "to": "division-of-admission-block",
+    "path": [
+      [31.2601, 75.707393],
+      [31.260041, 75.707243],
+      [31.25994, 75.707189],
+      [31.259825, 75.707211],
+      [31.259678, 75.707216],
+      [31.259504, 75.7072],
+      [31.259366, 75.707222],
+      [31.25927, 75.707222],
+      [31.259036, 75.707222],
+      [31.258954, 75.707222],
+      [31.258835, 75.707222],
+      [31.258688, 75.707222],
+      [31.258569, 75.707227],
+      [31.258532, 75.707012],
+      [31.258504, 75.706851],
+      [31.258449, 75.70668],
+      [31.258275, 75.706648],
+      [31.258073, 75.706637],
+      [31.257853, 75.706626],
+      [31.257367, 75.706594],
+      [31.257285, 75.70661],
+      [31.257202, 75.70661],
+      [31.257124, 75.706717],
+      [31.257009, 75.70668],
+      [31.256945, 75.706605],
+      [31.256789, 75.706524],
+      [31.256588, 75.706428],
+      [31.256464, 75.706363],
+      [31.256367, 75.70632],
+      [31.256292, 75.706299],
+      [31.256172, 75.706283],
+      [31.256051, 75.706216],
+      [31.255893, 75.706138],
+      [31.2557, 75.706079],
+      [31.255586, 75.70602],
+      [31.255542, 75.705966],
+      [31.255528, 75.705864],
+      [31.255547, 75.705752],
+      [31.255423, 75.705602],
+      [31.255285, 75.705607],
+      [31.255161, 75.705569],
+      [31.255015, 75.705489],
+      [31.254891, 75.705451],
+      [31.254822, 75.705398],
+      [31.254716, 75.705323],
+      [31.254671, 75.705301],
+      [31.254528, 75.705215],
+      [31.254414, 75.705162],
+      [31.25429, 75.705092],
+      [31.254185, 75.705038],
+      [31.254029, 75.70499],
+      [31.253946, 75.704947],
+      [31.25394, 75.704931],
+      [31.25387, 75.704891],
+      [31.253829, 75.704877],
+      [31.253712, 75.704861],
+      [31.253659, 75.704845],
+      [31.253602, 75.704845],
+      [31.253559, 75.704826],
+      [31.253501, 75.70481],
+      [31.253465, 75.704775],
+      [31.253334, 75.7047],
+      [31.253031, 75.704577],
+      [31.252985, 75.704539],
+      [31.252967, 75.704566],
+      [31.252896, 75.704639],
+      [31.252809, 75.704733]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn left and walk south along the path.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn right and continue south-west. The University Health Center is close by.", "at": 11, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "Turn left and keep walking south.", "at": 14, "landmark": "", "photo": ""},
+      {"text": "Turn right and continue south.", "at": 22, "landmark": "", "photo": ""},
+      {"text": "Turn right near Uni Mall and walk south-west.", "at": 34, "landmark": "Uni Mall", "photo": ""},
+      {"text": "At Uni Polis, turn left and keep walking south.", "at": 38, "landmark": "Uni Polis", "photo": ""},
+      {"text": "Turn left. The Division of Admission Block is just ahead.", "at": 62, "landmark": "", "photo": ""},
+      {"text": "You have arrived at the Division of Admission Block.", "at": 66, "landmark": "Division of Admission Block", "photo": ""}
+    ]
+  },
+  {
+    "id": "entry-gate__uni-mall",
+    "from": "entry-gate",
+    "to": "uni-mall",
+    "path": [
+      [31.260251, 75.707434], [31.2601, 75.707141], [31.259963, 75.707195], [31.259862, 75.707195],
+      [31.259642, 75.707184], [31.259467, 75.707227], [31.258899, 75.707206], [31.258587, 75.707216],
+      [31.258596, 75.706948], [31.25844, 75.706691], [31.257908, 75.706658], [31.257395, 75.706658],
+      [31.257165, 75.706851], [31.257009, 75.706626], [31.256835, 75.706551], [31.256459, 75.706444],
+      [31.256276, 75.706358], [31.256037, 75.706283], [31.255808, 75.706208], [31.255634, 75.706133],
+      [31.255698, 75.70595], [31.255753, 75.705746]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn left and walk south along the path.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn right and follow the path west, then south-west.", "at": 7, "landmark": "", "photo": ""},
+      {"text": "Turn left and continue south. The University Health Center is on your left.", "at": 9, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "Follow the short zig-zag, first south-east and then south-west.", "at": 11, "landmark": "", "photo": ""},
+      {"text": "Turn left and walk south.", "at": 13, "landmark": "", "photo": ""},
+      {"text": "Turn right and walk west. DSW is just to your left and Uni Mall is straight ahead.", "at": 19, "landmark": "DSW", "photo": ""},
+      {"text": "You have arrived at Uni Mall.", "at": 21, "landmark": "Uni Mall", "photo": ""}
+    ]
+  },
+  {
+    "id": "entry-gate__cc-food-court",
+    "from": "entry-gate",
+    "to": "cc-food-court",
+    "path": [
+      [31.260251, 75.707434], [31.260054, 75.707206], [31.259889, 75.707184], [31.259742, 75.707184],
+      [31.259632, 75.707216], [31.259403, 75.707227], [31.259036, 75.707216], [31.258862, 75.707259],
+      [31.258688, 75.707259], [31.258569, 75.707259], [31.258376, 75.707291], [31.258314, 75.707286],
+      [31.258257, 75.707297], [31.258197, 75.707316], [31.258167, 75.707493], [31.258137, 75.70756],
+      [31.258105, 75.707568], [31.25808, 75.707562], [31.258069, 75.707562], [31.258014, 75.707554],
+      [31.25792, 75.70756], [31.25789, 75.707576], [31.257865, 75.707632], [31.257865, 75.707721],
+      [31.25786, 75.707785]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn left and walk south. The University Health Center is close by on your right.", "at": 1, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "Turn left towards the east and follow the path, bending south and then east. Sh. Baldevraj Auditorium is nearby.", "at": 13, "landmark": "Sh. Baldevraj Auditorium", "photo": ""},
+      {"text": "You have arrived at CC Food Court.", "at": 24, "landmark": "CC Food Court", "photo": ""}
+    ]
+  },
+  {
+    "id": "entry-gate__uni-health-center",
+    "from": "entry-gate",
+    "to": "uni-health-center",
+    "path": [
+      [31.260251, 75.707434], [31.260054, 75.707281], [31.259935, 75.707281], [31.259793, 75.707248],
+      [31.259357, 75.707238], [31.259064, 75.70727], [31.25888, 75.707248], [31.25872, 75.70727],
+      [31.258601, 75.707243], [31.258509, 75.707227], [31.258381, 75.70712], [31.258339, 75.707055],
+      [31.258186, 75.706975]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn slightly left and walk straight south.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Bear right (south-west). The University Health Center is straight ahead.", "at": 9, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "You have arrived at the University Health Center.", "at": 12, "landmark": "Uni Health Center", "photo": ""}
+    ]
+  },
+  {
+    "id": "entry-gate__uni-polis",
+    "from": "entry-gate",
+    "to": "uni-polis",
+    "path": [
+      [31.260251, 75.707434], [31.260063, 75.707259], [31.259843, 75.707248], [31.259596, 75.707248],
+      [31.259385, 75.707248], [31.259128, 75.707248], [31.258935, 75.707238], [31.258614, 75.707238],
+      [31.258458, 75.707227], [31.258238, 75.707173], [31.258186, 75.706975], [31.258165, 75.70668],
+      [31.257853, 75.706701], [31.257642, 75.706658], [31.257395, 75.706605], [31.257184, 75.706626],
+      [31.257064, 75.706648], [31.256881, 75.706615], [31.25678, 75.706519], [31.256693, 75.706497],
+      [31.256592, 75.706449], [31.256496, 75.706401], [31.256422, 75.706374], [31.256308, 75.706336],
+      [31.256216, 75.706326], [31.256074, 75.706256], [31.255968, 75.706213], [31.255881, 75.706186],
+      [31.255799, 75.706143], [31.255702, 75.706084], [31.255652, 75.706031], [31.255657, 75.705934],
+      [31.255675, 75.705864], [31.255666, 75.705795], [31.255597, 75.705795], [31.255547, 75.705752],
+      [31.255423, 75.705602]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn left and walk straight south.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn right and walk west, passing the University Health Center.", "at": 9, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "Turn left and continue south.", "at": 11, "landmark": "", "photo": ""},
+      {"text": "Keep following the path south-west as it bends gently.", "at": 17, "landmark": "", "photo": ""},
+      {"text": "Uni Mall is right beside the path here. Continue south-west.", "at": 30, "landmark": "Uni Mall", "photo": ""},
+      {"text": "You have arrived at Uni Polis.", "at": 36, "landmark": "Uni Polis", "photo": ""}
+    ]
+  },
+  {
+    "id": "entry-gate__central-library",
+    "from": "entry-gate",
+    "to": "central-library",
+    "path": [
+      [31.260251, 75.707434], [31.260164, 75.707265], [31.260063, 75.707259], [31.259871, 75.707232],
+      [31.259431, 75.707232], [31.258591, 75.707222], [31.258477, 75.7072], [31.258307, 75.707173],
+      [31.258248, 75.706653], [31.257399, 75.70661], [31.257307, 75.706691], [31.25723, 75.706846],
+      [31.257078, 75.706835], [31.256798, 75.706503], [31.256436, 75.706342], [31.256078, 75.706224],
+      [31.25595, 75.706127], [31.255808, 75.706052], [31.25568, 75.705945], [31.255693, 75.705875],
+      [31.255723, 75.705811], [31.255576, 75.705752], [31.255386, 75.705663], [31.255281, 75.705607],
+      [31.255113, 75.705489], [31.254774, 75.70536], [31.254207, 75.705049], [31.253974, 75.704861],
+      [31.253772, 75.704792], [31.253602, 75.704759], [31.253354, 75.704711], [31.252891, 75.704405],
+      [31.252868, 75.70411], [31.25285, 75.704014], [31.252414, 75.704022], [31.252336, 75.703998],
+      [31.252261, 75.703957], [31.252231, 75.703872], [31.25213, 75.703888]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn left and keep walking straight south along the main walkway.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Near the University Health Center, turn right and head west.", "at": 7, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "Turn left and continue south.", "at": 8, "landmark": "", "photo": ""},
+      {"text": "Where the path bends, turn right and follow it south-west.", "at": 12, "landmark": "", "photo": ""},
+      {"text": "Uni Mall and Uni Polis are right beside the path here. Keep heading south.", "at": 20, "landmark": "Uni Mall", "photo": ""},
+      {"text": "Continue south-west along the path. The Business Block is nearby.", "at": 25, "landmark": "Business Block", "photo": ""},
+      {"text": "Turn right and head west. Blocks 29 and 28 are close by.", "at": 31, "landmark": "Block 29", "photo": ""},
+      {"text": "Turn left and walk south.", "at": 33, "landmark": "", "photo": ""},
+      {"text": "Head west towards the Shanti Devi Mittal Auditorium.", "at": 36, "landmark": "Shanti Devi Mittal Auditorium", "photo": ""},
+      {"text": "You have arrived at the Central Library.", "at": 38, "landmark": "Central Library", "photo": ""}
+    ]
+  },
+  {
+    "id": "entry-gate__sports-complex",
+    "from": "entry-gate",
+    "to": "sports-complex",
+    "path": [
+      [31.260251, 75.707434], [31.260018, 75.707206], [31.259614, 75.707238], [31.258688, 75.707195],
+      [31.258527, 75.707216], [31.25828, 75.707195], [31.25827, 75.706664], [31.257473, 75.706626],
+      [31.25734, 75.706723], [31.257188, 75.706782], [31.25706, 75.706766], [31.256808, 75.706524],
+      [31.256583, 75.706428], [31.256257, 75.70632], [31.256028, 75.706235], [31.255826, 75.706084],
+      [31.255698, 75.706041], [31.255723, 75.705824], [31.255567, 75.705741], [31.255184, 75.705553],
+      [31.25479, 75.705341], [31.254526, 75.705197], [31.254272, 75.705081], [31.254065, 75.704969],
+      [31.253818, 75.704877], [31.253565, 75.704808], [31.253318, 75.704706], [31.253093, 75.704588],
+      [31.252887, 75.704502], [31.252933, 75.702984], [31.252923, 75.702324], [31.25282, 75.702286],
+      [31.252699, 75.702268], [31.252614, 75.702311], [31.252396, 75.702514], [31.252332, 75.702627],
+      [31.252288, 75.702576], [31.252169, 75.702501], [31.252068, 75.702388], [31.252027, 75.702316],
+      [31.251947, 75.702356], [31.251786, 75.702364], [31.251655, 75.702388], [31.251488, 75.702394],
+      [31.251302, 75.702388], [31.251183, 75.702383], [31.251197, 75.702262], [31.251192, 75.702195],
+      [31.251068, 75.702192], [31.25091, 75.702203], [31.250727, 75.702222], [31.250649, 75.702201],
+      [31.250539, 75.70219]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn left and keep walking south along the main walkway.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Near the University Health Center, turn right and head west.", "at": 5, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "Turn left and continue south.", "at": 6, "landmark": "", "photo": ""},
+      {"text": "Uni Mall and Uni Polis are right beside the path here. Keep heading south-west.", "at": 17, "landmark": "Uni Mall", "photo": ""},
+      {"text": "Continue south-west. The Business Block is nearby.", "at": 20, "landmark": "Business Block", "photo": ""},
+      {"text": "At the Division of Admission Block, turn right and walk west along the row of blocks (Block 26 and Block 25).", "at": 28, "landmark": "Division of Admission Block", "photo": ""},
+      {"text": "Turn left and head south. The Buzz food courts are nearby.", "at": 30, "landmark": "CSE Buzz Food Court", "photo": ""},
+      {"text": "Turn right and follow the path south-west.", "at": 35, "landmark": "", "photo": ""},
+      {"text": "Turn left and continue south.", "at": 39, "landmark": "", "photo": ""},
+      {"text": "Girls Hostel 7 is right beside the path here. Keep going south.", "at": 43, "landmark": "Girls Hostel 7", "photo": ""},
+      {"text": "Turn right for a short stretch, then turn left again and keep going south. The Gym is beside the path.", "at": 45, "landmark": "Gym", "photo": ""},
+      {"text": "Almost there. The Sports Complex is just ahead.", "at": 50, "landmark": "", "photo": ""},
+      {"text": "You have arrived at the Sports Complex.", "at": 52, "landmark": "Sports Complex", "photo": ""}
+    ]
+  },
+  {
+    "id": "entry-gate__law-gate",
+    "from": "entry-gate",
+    "to": "law-gate",
+    "path": [
+      [31.260251, 75.707434], [31.259972, 75.707259], [31.259788, 75.707259], [31.259357, 75.707227],
+      [31.258972, 75.707238], [31.258624, 75.707238], [31.258381, 75.707179], [31.25827, 75.707173],
+      [31.258261, 75.706642], [31.257454, 75.706615], [31.257399, 75.706717], [31.257197, 75.706717],
+      [31.257041, 75.706723], [31.256986, 75.706637], [31.256876, 75.706578], [31.256941, 75.706412],
+      [31.256895, 75.706331], [31.256684, 75.706267], [31.256528, 75.706202], [31.256312, 75.706127],
+      [31.256234, 75.706009], [31.256186, 75.705961], [31.256134, 75.705757], [31.256067, 75.705425],
+      [31.256037, 75.705422], [31.25598, 75.705425], [31.255893, 75.705258], [31.255833, 75.704869],
+      [31.255803, 75.704553], [31.255785, 75.704384], [31.255744, 75.704185], [31.25567, 75.704035],
+      [31.255528, 75.704116], [31.255404, 75.7041], [31.255377, 75.703987], [31.255299, 75.70396],
+      [31.255313, 75.703713], [31.255329, 75.703523], [31.255336, 75.703239], [31.255356, 75.703059],
+      [31.255384, 75.702965], [31.2554, 75.702734], [31.255386, 75.702348], [31.255409, 75.702034],
+      [31.255411, 75.701838], [31.255418, 75.701723], [31.255423, 75.701546], [31.255391, 75.701289],
+      [31.255281, 75.701165], [31.255175, 75.701112], [31.255047, 75.70109], [31.254937, 75.701079],
+      [31.254827, 75.700999], [31.254781, 75.700827], [31.254804, 75.700634], [31.254891, 75.700296]
+    ],
+    "steps": [
+      {"text": "Start at the Entry Gate and head south-west.", "at": 0, "landmark": "Entry Gate", "photo": ""},
+      {"text": "Turn left and walk south along the main walkway.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Near the University Health Center, turn right and head west.", "at": 6, "landmark": "Uni Health Center", "photo": ""},
+      {"text": "Turn left and continue south.", "at": 8, "landmark": "", "photo": ""},
+      {"text": "Turn right for a short stretch, then bear left and keep heading south-west.", "at": 13, "landmark": "", "photo": ""},
+      {"text": "Girls Hostel 4 is beside the path. Continue south-west, then west.", "at": 23, "landmark": "Girls Hostel 4", "photo": ""},
+      {"text": "Turn left and head south. Girls Hostel 3 is close by.", "at": 30, "landmark": "Girls Hostel 3", "photo": ""},
+      {"text": "Turn right and walk west along the path.", "at": 33, "landmark": "", "photo": ""},
+      {"text": "The PHE Block is right beside the path. Keep walking west.", "at": 37, "landmark": "PHE Block", "photo": ""},
+      {"text": "Turn left and head south-west.", "at": 47, "landmark": "", "photo": ""},
+      {"text": "Turn right near the Law Block and continue south-west.", "at": 51, "landmark": "Law Block", "photo": ""},
+      {"text": "Turn right and walk west to the Law Gate.", "at": 53, "landmark": "", "photo": ""},
+      {"text": "You have arrived at the Law Gate.", "at": 55, "landmark": "Law Gate", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-25__law-gate",
+    "from": "block-25",
+    "to": "law-gate",
+    "path": [
+      [31.252818, 75.702565], [31.252946, 75.702458], [31.253011, 75.702399], [31.253033, 75.702308],
+      [31.253079, 75.702249], [31.253134, 75.702104], [31.253176, 75.701997], [31.253244, 75.701863],
+      [31.253332, 75.701739], [31.253419, 75.701691], [31.253575, 75.701675], [31.253744, 75.701669],
+      [31.253946, 75.701664], [31.254194, 75.701675], [31.254409, 75.701653], [31.254437, 75.701519],
+      [31.254455, 75.701262], [31.25446, 75.701069], [31.254478, 75.700817], [31.254671, 75.700763],
+      [31.254863, 75.700784], [31.254891, 75.700296]
+    ],
+    "steps": [
+      {"text": "Start at Block 25 and head north-west.", "at": 0, "landmark": "Block 25", "photo": ""},
+      {"text": "Bear right and keep going north.", "at": 9, "landmark": "", "photo": ""},
+      {"text": "Turn left and walk west.", "at": 14, "landmark": "", "photo": ""},
+      {"text": "Turn right and head north for a short stretch.", "at": 18, "landmark": "", "photo": ""},
+      {"text": "Turn left and walk west to the Law Gate.", "at": 20, "landmark": "", "photo": ""},
+      {"text": "You have arrived at the Law Gate.", "at": 21, "landmark": "Law Gate", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-25__girls-hostel-5-6",
+    "from": "block-25",
+    "to": "girls-hostel-5-6",
+    "path": [
+      [31.252818, 75.702565], [31.252946, 75.702458], [31.253061, 75.702404], [31.253111, 75.702206],
+      [31.253162, 75.702061], [31.253263, 75.701868], [31.253341, 75.701728], [31.253446, 75.701691],
+      [31.253666, 75.701659], [31.253886, 75.70168], [31.254024, 75.701675], [31.254198, 75.701675],
+      [31.25423, 75.701514], [31.254235, 75.701358], [31.254272, 75.701154], [31.254235, 75.700956],
+      [31.254157, 75.700897], [31.253992, 75.700892]
+    ],
+    "steps": [
+      {"text": "Start at Block 25 and head north-west.", "at": 0, "landmark": "Block 25", "photo": ""},
+      {"text": "Turn left and follow the path west, then north-west.", "at": 2, "landmark": "", "photo": ""},
+      {"text": "Turn right and walk north.", "at": 6, "landmark": "", "photo": ""},
+      {"text": "Turn left and walk west.", "at": 11, "landmark": "", "photo": ""},
+      {"text": "Turn left and head south to Girls Hostel 5/6.", "at": 15, "landmark": "", "photo": ""},
+      {"text": "You have arrived at Girls Hostel 5/6.", "at": 17, "landmark": "Girls Hostel 5/6", "photo": ""}
+    ]
+  },
+  {
+    "id": "division-of-admission-block__block-25",
+    "from": "division-of-admission-block",
+    "to": "block-25",
+    "path": [
+      [31.252809, 75.704733], [31.252933, 75.7047], [31.252882, 75.704566], [31.25291, 75.704196],
+      [31.252919, 75.703772], [31.252933, 75.702957], [31.252933, 75.702587], [31.252818, 75.702565]
+    ],
+    "steps": [
+      {"text": "Start at the Division of Admission Block and head north.", "at": 0, "landmark": "Division of Admission Block", "photo": ""},
+      {"text": "Turn left and walk west along the row of blocks.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Keep going west. Blocks 29, 28 and 26 are right beside the path.", "at": 3, "landmark": "Block 28", "photo": ""},
+      {"text": "Block 25 is just ahead. Turn left and walk south to it.", "at": 6, "landmark": "Block 25", "photo": ""},
+      {"text": "You have arrived at Block 25.", "at": 7, "landmark": "Block 25", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-25__central-mess-2",
+    "from": "block-25",
+    "to": "central-mess-2",
+    "path": [
+      [31.252818, 75.702565], [31.252942, 75.702592], [31.252933, 75.702469], [31.252921, 75.702378],
+      [31.252884, 75.702273], [31.252664, 75.702284], [31.252582, 75.702311], [31.252412, 75.702482],
+      [31.252339, 75.702528], [31.252192, 75.702485], [31.252029, 75.702391], [31.252045, 75.70227],
+      [31.2521, 75.702021], [31.252059, 75.701691], [31.252077, 75.701554], [31.252208, 75.701514],
+      [31.252302, 75.701495], [31.25227, 75.701219], [31.252031, 75.701213], [31.251992, 75.700983],
+      [31.252061, 75.70087]
+    ],
+    "steps": [
+      {"text": "Start at Block 25 and head north-west.", "at": 0, "landmark": "Block 25", "photo": ""},
+      {"text": "Turn left and head west.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn left and head south.", "at": 3, "landmark": "", "photo": ""},
+      {"text": "Turn right and head south.", "at": 8, "landmark": "", "photo": ""},
+      {"text": "Turn right and head west.", "at": 10, "landmark": "", "photo": ""},
+      {"text": "Turn right and head north-west.", "at": 13, "landmark": "", "photo": ""},
+      {"text": "Turn left and head west.", "at": 16, "landmark": "", "photo": ""},
+      {"text": "Turn left and head south. Central Mess 1 is beside the path.", "at": 17, "landmark": "Central Mess 1", "photo": ""},
+      {"text": "Turn right and head west.", "at": 18, "landmark": "", "photo": ""},
+      {"text": "Turn right and head north-west.", "at": 19, "landmark": "", "photo": ""},
+      {"text": "You have arrived at Central Mess 2.", "at": 20, "landmark": "Central Mess 2", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-28__block-34",
+    "from": "block-28",
+    "to": "block-34",
+    "path": [
+      [31.25279, 75.70381], [31.252921, 75.703815], [31.252907, 75.70396], [31.252843, 75.704041],
+      [31.252614, 75.704022], [31.252368, 75.704035], [31.252302, 75.704041], [31.252304, 75.704421],
+      [31.25183, 75.704448], [31.251738, 75.704454], [31.251481, 75.704429], [31.251479, 75.704609]
+    ],
+    "steps": [
+      {"text": "Start at Block 28 and head north-east.", "at": 0, "landmark": "Block 28", "photo": ""},
+      {"text": "Turn right and head east.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn right and head south. Block 29 is beside the path.", "at": 3, "landmark": "Block 29", "photo": ""},
+      {"text": "Turn left and head east. Shanti Devi Mittal Auditorium is beside the path.", "at": 5, "landmark": "Shanti Devi Mittal Auditorium", "photo": ""},
+      {"text": "Turn right and head south.", "at": 7, "landmark": "", "photo": ""},
+      {"text": "Turn left and head east.", "at": 10, "landmark": "", "photo": ""},
+      {"text": "You have arrived at Block 34.", "at": 11, "landmark": "Block 34", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-28__block-33",
+    "from": "block-28",
+    "to": "block-33",
+    "path": [
+      [31.25279, 75.70381], [31.25291, 75.703815], [31.252905, 75.704073], [31.252451, 75.704019],
+      [31.252371, 75.704003], [31.252309, 75.704014], [31.252302, 75.703906], [31.252316, 75.703869],
+      [31.25213, 75.703888], [31.252059, 75.703947], [31.251972, 75.70399], [31.251887, 75.704081],
+      [31.251839, 75.704145], [31.251802, 75.704215], [31.25177, 75.704285], [31.251786, 75.704429],
+      [31.251759, 75.704598]
+    ],
+    "steps": [
+      {"text": "Start at Block 28 and head north-east.", "at": 0, "landmark": "Block 28", "photo": ""},
+      {"text": "Turn right and head east.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn right and head south. Block 29 is beside the path.", "at": 2, "landmark": "Block 29", "photo": ""},
+      {"text": "Turn right and head south-west. Shanti Devi Mittal Auditorium is beside the path.", "at": 4, "landmark": "Shanti Devi Mittal Auditorium", "photo": ""},
+      {"text": "Turn left and head south. Shanti Devi Mittal Auditorium is beside the path.", "at": 7, "landmark": "Shanti Devi Mittal Auditorium", "photo": ""},
+      {"text": "You have arrived at Block 33.", "at": 16, "landmark": "Block 33", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-28__block-38",
+    "from": "block-28",
+    "to": "block-38",
+    "path": [
+      [31.25279, 75.70381], [31.252889, 75.703818], [31.2529, 75.704035], [31.252554, 75.70403],
+      [31.252348, 75.704022], [31.2523, 75.703971], [31.252309, 75.703657], [31.252313, 75.703346],
+      [31.252252, 75.703308]
+    ],
+    "steps": [
+      {"text": "Start at Block 28 and head north-east.", "at": 0, "landmark": "Block 28", "photo": ""},
+      {"text": "Turn right and head east.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn right and head south.", "at": 2, "landmark": "", "photo": ""},
+      {"text": "Turn right and head west. Shanti Devi Mittal Auditorium is beside the path.", "at": 4, "landmark": "Shanti Devi Mittal Auditorium", "photo": ""},
+      {"text": "Turn left and head south-west.", "at": 7, "landmark": "", "photo": ""},
+      {"text": "You have arrived at Block 38.", "at": 8, "landmark": "Block 38", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-34__block-34-food-court",
+    "from": "block-34",
+    "to": "block-34-food-court",
+    "path": [
+      [31.251479, 75.704609], [31.251451, 75.704488], [31.251373, 75.704502], [31.251185, 75.704534],
+      [31.251036, 75.704529], [31.250967, 75.704542], [31.250862, 75.70455], [31.250713, 75.704486]
+    ],
+    "steps": [
+      {"text": "Start at Block 34 and head south-west.", "at": 0, "landmark": "Block 34", "photo": ""},
+      {"text": "Turn left and head south.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "You have arrived at Block 34 Food Court.", "at": 7, "landmark": "Block 34 Food Court", "photo": ""}
+    ]
+  },
+  {
+    "id": "block-34__block-55",
+    "from": "block-34",
+    "to": "block-55",
+    "path": [
+      [31.251479, 75.704609], [31.251451, 75.704488], [31.251373, 75.704502], [31.251185, 75.704534],
+      [31.251036, 75.704529], [31.250967, 75.704542], [31.250862, 75.70455], [31.250713, 75.704486],
+      [31.250679, 75.704413], [31.250552, 75.704175], [31.250465, 75.704116], [31.250341, 75.703847],
+      [31.250383, 75.703477], [31.250291, 75.703391], [31.250208, 75.703129], [31.250062, 75.702994],
+      [31.249764, 75.703005], [31.249323, 75.703005], [31.249282, 75.70286], [31.249172, 75.702876],
+      [31.248911, 75.702898], [31.248635, 75.702893], [31.248452, 75.702876], [31.248204, 75.702935],
+      [31.248195, 75.70308], [31.24787, 75.703096], [31.247489, 75.703096], [31.246879, 75.703043],
+      [31.246764, 75.703043], [31.246778, 75.703177], [31.24681, 75.703386], [31.246902, 75.703622]
+    ],
+    "steps": [
+      {"text": "Start at Block 34 and head south-west.", "at": 0, "landmark": "Block 34", "photo": ""},
+      {"text": "Turn left and head south.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn right and head south-west. Block 34 Food Court is beside the path.", "at": 7, "landmark": "Block 34 Food Court", "photo": ""},
+      {"text": "Turn left and head south-east.", "at": 27, "landmark": "", "photo": ""},
+      {"text": "Turn left and head east.", "at": 29, "landmark": "", "photo": ""},
+      {"text": "You have arrived at Block 55.", "at": 31, "landmark": "Block 55", "photo": ""}
+    ]
+  },
+  {
+    "id": "main-gate-entry__joins-entry-gate-walkway",
+    "type": "connector",
+    "from": "main-gate-entry",
+    "joins": "entry-gate",
+    "path": [
+      [31.26055, 75.706795], [31.260453, 75.706728], [31.260375, 75.706717], [31.26032, 75.706696],
+      [31.260206, 75.706685], [31.260082, 75.706701], [31.260004, 75.706717], [31.259926, 75.706712],
+      [31.259788, 75.706669], [31.259692, 75.706669], [31.259577, 75.706685], [31.259458, 75.706701],
+      [31.259421, 75.706825], [31.259467, 75.706991], [31.259481, 75.707152], [31.259477, 75.707227]
+    ],
+    "steps": [
+      {"text": "Start at the Main Gate Entry and head south-west.", "at": 0, "landmark": "Main Gate Entry", "photo": ""},
+      {"text": "Turn left and walk straight south along the path.", "at": 1, "landmark": "", "photo": ""},
+      {"text": "Turn left and follow the path east until you reach the main walkway from the Entry Gate.", "at": 11, "landmark": "", "photo": ""},
+      {"text": "Turn right onto the main walkway and continue south.", "at": 15, "landmark": "", "photo": ""}
+    ]
+  }
+]

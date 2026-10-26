@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff6b00" />
+  <!-- Bump this AND the ?v= on the files below whenever the app changes (stops stale cached files mixing) -->
+  <meta name="app-version" content="2026-10-26.3" />
+  <title>LPU Campus Navigator</title>
+  <!-- Inline icon so the browser doesn't ask for a missing favicon.ico -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ff6b00'/%3E%3Ccircle cx='16' cy='16' r='6' fill='white'/%3E%3C/svg%3E" />
+
+  <!-- Leaflet map library (CSS + JS) from a CDN — no API key needed -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Inter for a clean, readable look (falls back to the system font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+
+  <link rel="stylesheet" href="style.css?v=2026-10-26.3" />
+</head>
+<body>
+  <!-- The map fills the whole screen -->
+  <main id="map" aria-label="Campus map"></main>
+
+  <!-- ===== Floating controls ===== -->
+
+  <!-- Top-left: show/hide categories on the map -->
+  <div class="top-left">
+    <div class="legend" id="legend">
+      <button id="filtersBtn" class="filters-btn" aria-expanded="false" aria-controls="legendChips">
+        <span id="filtersIcon" class="filters-icon" aria-hidden="true"></span><span>Filters</span><span id="filtersCount" class="filters-count" hidden></span>
+      </button>
+      <div id="legendChips" class="legend-chips" role="group" aria-label="Show or hide categories on the map"></div>
+    </div>
+  </div>
+
+  <!-- Top-right: Admin gear + Map / Satellite -->
+  <div class="map-tools">
+    <!-- The gear is the Admin switch (the checkbox keeps the old adminToggle id) -->
+    <label class="gear-btn" title="Admin tools">
+      <input type="checkbox" id="adminToggle" aria-label="Admin tools" />
+      <span id="gearIcon" aria-hidden="true"></span>
+    </label>
+    <div class="layer-toggle" role="group" aria-label="Map style">
+      <button id="mapLayerBtn" class="layer-btn active" aria-pressed="true">Map</button>
+      <button id="satLayerBtn" class="layer-btn" aria-pressed="false">Satellite</button>
+    </div>
+  </div>
+
+  <!-- Discreet banner while a test session is recording -->
+  <div id="testBanner" class="test-banner" hidden role="status"></div>
+
+  <!-- Right: Locate me + Recentre. Left: I'm lost. Both ride just above the sheet. -->
+  <div class="fab-stack">
+    <button id="locateBtn" class="fab" aria-label="Show where I am" title="Show where I am">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" fill="currentColor"/>
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </button>
+    <button id="recentreBtn" class="fab" aria-label="Show the whole campus" title="Show the whole campus">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+        <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+  <button id="lostBtn" class="lost-btn">
+    <span id="lostIcon" class="lost-icon" aria-hidden="true"></span><span>I'm lost</span>
+  </button>
+
+  <!-- ===== Directions top bar: From → To (routes.js) ===== -->
+  <section id="dirTop" class="dir-top" hidden aria-label="Start and destination">
+    <div class="dir-fields">
+      <div class="dir-inputs">
+        <div class="dir-row">
+          <span id="dirFromTopBadge" class="mini-badge"></span>
+          <input id="fromInput" class="dir-input" type="search" placeholder="Where are you starting?" autocomplete="off" aria-label="Starting from" />
+        </div>
+        <div class="dir-row">
+          <span id="dirToBadge" class="mini-badge"></span>
+          <input id="toInput" class="dir-input" type="search" placeholder="Where do you want to go?" autocomplete="off" aria-label="Going to" />
+        </div>
+      </div>
+      <button id="swapBtn" class="swap-btn" aria-label="Swap start and destination" title="Swap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M7 4 3 8M7 4l4 4M17 20V4M17 20l-4-4M17 20l4-4"/></svg>
+      </button>
+    </div>
+    <!-- Shown when we picked the start for you -->
+    <p id="fromHint" class="from-hint" hidden>
+      <span id="fromHintText"></span>
+      <button id="fromHintChange" class="hint-link">Change</button>
+    </p>
+    <!-- One suggestion list shared by From and To -->
+    <ul id="dirList" class="suggest-list" role="listbox" hidden></ul>
+  </section>
+
+  <!-- ===== The bottom sheet (ui.js): peek / half / full; a left panel on desktop ===== -->
+  <section id="sheet" class="sheet-main" aria-label="Campus guide">
+    <button id="sheetGrab" class="sheet-grab" aria-label="Make the panel bigger or smaller">
+      <span class="sheet-handle"></span>
+    </button>
+    <div id="sheetScroll" class="sheet-scroll">
+
+      <!-- View: home -->
+      <div id="viewHome" class="view">
+        <header class="home-head">
+          <h1 class="home-title"><span class="brand-dot"></span>LPU Campus Navigator</h1>
+          <p class="home-sub">New here? Find your way around campus.</p>
+        </header>
+        <div class="search-box">
+          <span id="searchIcon" class="search-icon" aria-hidden="true"></span>
+          <input id="searchInput" type="search" placeholder="Where do you want to go?" autocomplete="off" aria-label="Where do you want to go?" />
+        </div>
+        <ul id="searchList" class="suggest-list inline" role="listbox" hidden></ul>
+
+        <div class="home-extra">
+          <!-- Category chips: tap to list those places and show only them on the map -->
+          <div id="categoryChips" class="chip-row" role="group" aria-label="Browse by category"></div>
+
+          <h2 class="section-title">Popular routes</h2>
+          <ul id="routeList" class="row-list" aria-busy="true">
+            <li class="skeleton"></li><li class="skeleton"></li><li class="skeleton"></li>
+          </ul>
+
+          <h2 class="section-title">Popular places</h2>
+          <ul id="popularList" class="row-list" aria-busy="true">
+            <li class="skeleton"></li><li class="skeleton"></li><li class="skeleton"></li>
+          </ul>
+
+          <div id="recentWrap" hidden>
+            <h2 class="section-title">Recently viewed</h2>
+            <ul id="recentList" class="row-list"></ul>
+          </div>
+
+          <footer class="home-foot">
+            <span>Map data © OpenStreetMap contributors</span>
+            <button id="footReport" class="link-btn">Report a problem</button>
+          </footer>
+        </div>
+      </div>
+
+      <!-- View: places in one category -->
+      <div id="viewCategory" class="view" hidden>
+        <button class="back-link" data-back="home">‹ Back</button>
+        <h2 id="catTitle" class="view-title"></h2>
+        <p id="catHint" class="view-hint"></p>
+        <ul id="catList" class="row-list"></ul>
+      </div>
+
+      <!-- View: one place -->
+      <div id="viewPlace" class="view" hidden>
+        <button class="back-link" data-back="home">‹ Back</button>
+        <div class="photo-wrap" id="photoWrap">
+          <img id="placePhoto" alt="" />
+          <div class="photo-placeholder">
+            <span id="photoIcon" class="photo-icon"></span>
+            <span>Photo coming soon</span>
+          </div>
+        </div>
+        <div class="chips">
+          <span id="placeCategory" class="chip"></span>
+          <span id="placeGroup" class="chip chip-soft"></span>
+        </div>
+        <h2 id="placeName" class="place-name"></h2>
+        <p id="placeFacts" class="place-facts"></p>
+        <p id="placeLandmark" class="landmark"></p>
+
+        <button id="directionsBtn" class="btn btn-primary btn-block btn-big">Directions</button>
+        <div class="two-btns">
+          <button id="shareBtn" class="btn btn-ghost">Share</button>
+          <button id="cardReport" class="btn btn-ghost">Report a problem</button>
+        </div>
+
+        <h2 class="section-title">Nearby</h2>
+        <ul id="nearbyRow" class="row-list"></ul>
+      </div>
+
+      <!-- View: directions (id kept as dirPanel for routes.js) -->
+      <div id="dirPanel" class="view" hidden>
+        <div class="dir-summary">
+          <div class="dir-ends">
+            <span id="dirFromBadge" class="mini-badge"></span>
+            <span id="dirFromName" class="dir-end-name"></span>
+            <span class="dir-arrow" aria-hidden="true">→</span>
+            <span id="dirToBadge2" class="mini-badge"></span>
+            <span id="dirToName2" class="dir-end-name"></span>
+          </div>
+          <div id="dirStats" class="dir-stats"></div>
+        </div>
+
+        <!-- Explains the two line styles when a route has an estimated stretch -->
+        <p id="lineLegend" class="line-legend" hidden>
+          <span class="ll-item"><span class="ll-solid" aria-hidden="true"></span>Solid = recorded path</span>
+          <span class="ll-item"><span class="ll-dash" aria-hidden="true"></span>Dashed = estimated stretch</span>
+        </p>
+
+        <p id="dirNote" class="dir-note" hidden></p>
+
+        <!-- Shown for routes built from recorded paths (routes.js estimateRoute) -->
+        <div id="estBox" class="est-box" hidden>
+          <span class="est-pill">Estimated route</span>
+          <p>Built from recorded paths. Real shortcuts may exist.</p>
+          <p id="estFar" class="est-far" hidden>The last stretch isn't recorded yet.</p>
+          <div class="two-btns">
+            <button id="estReport" class="btn btn-ghost">Report a problem</button>
+            <button id="estRequest" class="btn btn-ghost">Request a better route</button>
+          </div>
+          <button id="estRecord" class="btn btn-small btn-block" hidden>Record this route</button>
+        </div>
+
+        <button id="startWalkBtn" class="btn btn-walk btn-block">Start walking</button>
+        <!-- Testing: fake GPS fixes along the route (shown once the admin gear has been used) -->
+        <button id="simWalkBtn" class="btn btn-small btn-block" hidden>Simulate walking (admin)</button>
+        <p id="farFromRoute" class="far-msg" hidden></p>
+
+        <!-- Starting from GPS but not near any recorded route -->
+        <div id="notOnRoute" class="not-on-route" hidden>
+          <p>You're not on a recorded route. Walk to Entry Gate or Main Gate Entry first?</p>
+          <div class="two-btns">
+            <button class="btn btn-ghost" data-gate="entry-gate">Entry Gate</button>
+            <button class="btn btn-ghost" data-gate="main-gate-entry">Main Gate Entry</button>
+          </div>
+        </div>
+
+        <div id="offRoute" class="off-route" hidden>
+          <span>You seem to be off the route</span>
+          <button id="restartBtn" class="btn btn-small">Restart from here</button>
+        </div>
+
+        <div id="stepCard" class="step-card">
+          <div id="stepProgress" class="step-progress">
+            <span id="stepCount"></span>
+            <div id="stepDots" class="step-dots" aria-hidden="true"></div>
+          </div>
+          <img id="stepPhoto" class="step-photo" alt="" hidden />
+          <p id="stepText" class="step-text"></p>
+          <!-- Worked out from the path: "About 150 m to the next turn" -->
+          <p id="stepDistance" class="step-distance" hidden></p>
+          <p id="stepLandmark" class="step-landmark" hidden></p>
+          <!-- Only shown when there's no recorded route -->
+          <button id="requestRouteBtn" class="btn btn-ghost btn-block" hidden>Request this route</button>
+          <div id="stepNav" class="step-nav">
+            <button id="stepBack" class="btn btn-ghost">Back</button>
+            <button id="stepNext" class="btn btn-primary btn-big">Next</button>
+          </div>
+          <button id="stepReport" class="link-btn">Report a problem</button>
+        </div>
+
+        <!-- Arrival screen -->
+        <div id="arrivedBox" class="arrived" hidden>
+          <span id="arrivedTick" class="arrived-tick" aria-hidden="true"></span>
+          <h2 id="arrivedTitle" class="arrived-title"></h2>
+          <p class="arrived-q">Was this helpful?</p>
+          <div id="helpfulBtns" class="two-btns">
+            <button class="btn btn-ghost" data-helpful="yes">Yes</button>
+            <button class="btn btn-ghost" data-helpful="no">No</button>
+          </div>
+          <p id="helpfulThanks" class="arrived-thanks" hidden>Thanks for telling us!</p>
+          <button id="backToMapBtn" class="btn btn-primary btn-block btn-big">Back to map</button>
+          <button id="seeStepsBtn" class="link-btn">See the steps again</button>
+        </div>
+
+        <button id="cancelDir" class="btn btn-cancel">Cancel directions</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Admin: route recorder + test mode (routes.js, help.js) ===== -->
+  <section id="recPanel" class="rec-panel" hidden aria-label="Admin tools">
+    <div class="rec-top">
+      <button id="recToggle" class="rec-head" aria-expanded="false">
+        <span>Record route</span><span id="recCount" class="rec-count"></span><span class="rec-caret" aria-hidden="true">▾</span>
+      </button>
+      <!-- Admin quick test: opens the sample route without searching -->
+      <button id="sampleRouteBtn" class="btn btn-small">Show sample route</button>
+    </div>
+    <div id="recBody" class="rec-body" hidden>
+      <div class="rec-selects">
+        <label>From<select id="recFrom"></select></label>
+        <label>To<select id="recTo"></select></label>
+      </div>
+      <p class="rec-hint">Tap along the footpath to add points. Drag a point to fine-tune it. Numbers are the "at" index for steps.</p>
+      <div class="rec-actions">
+        <button id="recUndo" class="btn btn-small">Undo last point</button>
+        <button id="recClear" class="btn btn-small">Clear</button>
+        <button id="recLoad" class="btn btn-small">Load saved</button>
+        <button id="recCopy" class="btn btn-small btn-primary">Copy route JSON</button>
+      </div>
+      <textarea id="recOut" class="rec-out" readonly hidden aria-label="Route JSON"></textarea>
+    </div>
+
+    <!-- Test mode (help.js): anonymous usability-test logging -->
+    <div class="rec-top rec-divider">
+      <button id="testToggle" class="rec-head" aria-expanded="false">
+        <span>Test mode</span><span id="testStatus" class="rec-count"></span><span class="rec-caret" aria-hidden="true">▾</span>
+      </button>
+    </div>
+    <div id="testBody" class="rec-body" hidden>
+      <div class="test-row">
+        <label>Tester code<input id="testerCode" maxlength="8" placeholder="e.g. S1" autocomplete="off" autocapitalize="characters" /></label>
+        <button id="sessionBtn" class="btn btn-small btn-primary">Start session</button>
+      </div>
+      <label class="test-label">Task label<input id="taskLabel" maxlength="60" placeholder="e.g. T1 Find Admission Block" autocomplete="off" /></label>
+      <div class="rec-actions">
+        <button id="taskStartBtn" class="btn btn-small">Mark task start</button>
+        <button id="taskEndBtn" class="btn btn-small">Mark task end</button>
+      </div>
+      <p id="taskTimer" class="task-timer" hidden></p>
+      <div class="rec-actions">
+        <button id="exportLogBtn" class="btn btn-small">Export log (CSV)</button>
+        <button id="exportFbBtn" class="btn btn-small">Export feedback (CSV)</button>
+      </div>
+      <button id="clearTestBtn" class="btn btn-small btn-danger">Clear all test data</button>
+      <p class="rec-hint">Everything stays on this device. Use codes like S1, not names. GPS coordinates are never logged.</p>
+    </div>
+  </section>
+
+  <!-- ===== "I'm lost" + Report a problem (help.js) ===== -->
+
+  <!-- Dim layer behind pop-up sheets; tapping it closes them -->
+  <div id="sheetBackdrop" class="sheet-backdrop" hidden></div>
+
+  <!-- "I'm lost" sheet: content is drawn by help.js -->
+  <section id="helpSheet" class="sheet" hidden role="dialog" aria-modal="true" aria-label="I'm lost">
+    <button id="helpClose" class="close-btn sheet-close" aria-label="Close">&times;</button>
+    <div id="helpBody"></div>
+  </section>
+
+  <!-- Report a problem form -->
+  <section id="reportSheet" class="sheet sheet-top" hidden role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+    <button id="reportClose" class="close-btn sheet-close" aria-label="Close">&times;</button>
+    <h2 id="reportTitle" class="sheet-title">Report a problem</h2>
+    <form id="reportForm">
+      <fieldset class="report-options">
+        <legend>What's wrong?</legend>
+        <label><input type="radio" name="category" value="Wrong direction" /> Wrong direction</label>
+        <label><input type="radio" name="category" value="Step is unclear" /> Step is unclear</label>
+        <label><input type="radio" name="category" value="Pin is in the wrong place" /> Pin is in the wrong place</label>
+        <label><input type="radio" name="category" value="Path is blocked or closed" /> Path is blocked or closed</label>
+        <label><input type="radio" name="category" value="Other" /> Other</label>
+      </fieldset>
+      <label class="report-note">Anything else? (optional)
+        <textarea id="reportNote" maxlength="200" rows="3" placeholder="For example: the gate was locked"></textarea>
+        <span id="reportCount" class="report-count">0 / 200</span>
+      </label>
+      <p id="reportContext" class="report-context"></p>
+      <button id="reportSubmit" type="submit" class="btn btn-primary btn-block" disabled>Send</button>
+    </form>
+  </section>
+
+  <!-- Small pop-up messages -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js?v=2026-10-26.3"></script>
+  <script src="routes.js?v=2026-10-26.3"></script>
+  <script src="help.js?v=2026-10-26.3"></script>
+  <script src="ui.js?v=2026-10-26.3"></script>
+</body>
+</html>

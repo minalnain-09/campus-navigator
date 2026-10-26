@@ -1,0 +1,70 @@
+[
+  {"id":"uni-health-center","name":"Uni Health Center","aliases":["hospital","health centre","medical","doctor"],"block":"","floor":"","category":"help","group":"Hospital","priority":1,"icon":"health","lat":31.258186,"lng":75.706975,"landmark_note":"","photo":""},
+
+  {"id":"baldevraj-auditorium","name":"Sh. Baldevraj Auditorium","aliases":["baldevraj","auditorium"],"block":"","floor":"","category":"academic","group":"Auditorium","priority":2,"icon":"auditorium","lat":31.258330,"lng":75.707935,"landmark_note":"","photo":""},
+  {"id":"shanti-devi-mittal-auditorium","name":"Shanti Devi Mittal Auditorium","aliases":["shanti devi","mittal auditorium","auditorium"],"block":"","floor":"","category":"academic","group":"Auditorium","priority":2,"icon":"auditorium","lat":31.252231,"lng":75.703872,"landmark_note":"","photo":""},
+  {"id":"open-auditorium","name":"Open Auditorium","aliases":["open air","auditorium"],"block":"","floor":"","category":"academic","group":"Auditorium","priority":2,"icon":"auditorium","lat":31.252178,"lng":75.704191,"landmark_note":"","photo":""},
+
+  {"id":"uni-mall","name":"Uni Mall","aliases":["mall","shops","shopping"],"block":"","floor":"","category":"admin","group":"Co-curricular","priority":1,"icon":"mall","lat":31.255753,"lng":75.705746,"landmark_note":"","photo":""},
+  {"id":"dsw","name":"DSW","aliases":["division of student welfare","student welfare"],"block":"","floor":"","category":"admin","group":"Co-curricular","priority":2,"icon":"admin","lat":31.255230,"lng":75.706176,"landmark_note":"","photo":""},
+  {"id":"uni-polis","name":"Uni Polis","aliases":["unipolis"],"block":"","floor":"","category":"admin","group":"Co-curricular","priority":2,"icon":"admin","lat":31.255423,"lng":75.705602,"landmark_note":"","photo":""},
+  {"id":"trace-shoe-room","name":"Trace Shoe Room","aliases":["shoe room","trace"],"block":"","floor":"","category":"admin","group":"Co-curricular","priority":2,"icon":"admin","lat":31.256831,"lng":75.707420,"landmark_note":"","photo":""},
+
+  {"id":"girls-studio-12","name":"Girls Studio-12","aliases":["studio 12"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.258115,"lng":75.703992,"landmark_note":"","photo":""},
+  {"id":"girls-studio-11","name":"Girls Studio-11","aliases":["studio 11"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.258055,"lng":75.704910,"landmark_note":"","photo":""},
+  {"id":"kitchen-ette-girls","name":"Kitchen Ette (Girls)","aliases":["kitchenette","kitchen ette"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.257436,"lng":75.704620,"landmark_note":"","photo":""},
+  {"id":"girls-hostel-4","name":"Girls Hostel 4","aliases":["gh4","girls hostel"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.256124,"lng":75.705419,"landmark_note":"","photo":""},
+  {"id":"girls-hostel-3","name":"Girls Hostel 3","aliases":["gh3","girls hostel"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.256065,"lng":75.704497,"landmark_note":"","photo":""},
+  {"id":"girls-hostel-1","name":"Girls Hostel 1","aliases":["gh1","girls hostel"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.256931,"lng":75.705564,"landmark_note":"","photo":""},
+  {"id":"girls-hostel-5-6","name":"Girls Hostel 5/6","aliases":["gh5","gh6","girls hostel"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.253992,"lng":75.700892,"landmark_note":"","photo":""},
+  {"id":"girls-hostel-2","name":"Girls Hostel 2","aliases":["gh2","girls hostel"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.256675,"lng":75.705022,"landmark_note":"","photo":""},
+  {"id":"girls-hostel-7","name":"Girls Hostel 7","aliases":["gh7","girls hostel"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.251376,"lng":75.702412,"landmark_note":"","photo":""},
+  {"id":"boys-hostel-1","name":"Boys Hostel 1","aliases":["bh1","boys hostel"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.251382,"lng":75.700661,"landmark_note":"","photo":""},
+  {"id":"apartment","name":"Apartment","aliases":["apartments","flats"],"block":"","floor":"","category":"hostel","group":"Hostel","priority":2,"icon":"hostel","lat":31.251818,"lng":75.701964,"landmark_note":"","photo":""},
+
+  {"id":"entry-gate","name":"Entry Gate","aliases":["gate","entrance","entry"],"block":"","floor":"","category":"admin","group":"Gate","priority":1,"icon":"gate","lat":31.260251,"lng":75.707434,"landmark_note":"","photo":""},
+  {"id":"main-gate-entry","name":"Main Gate Entry","aliases":["main gate","gate","entrance"],"block":"","floor":"","category":"admin","group":"Gate","priority":1,"icon":"gate","lat":31.260550,"lng":75.706795,"landmark_note":"","photo":""},
+  {"id":"law-gate","name":"Law Gate","aliases":["law gate","back gate","gate"],"block":"","floor":"","category":"admin","group":"Gate","priority":1,"icon":"gate","lat":31.254891,"lng":75.700296,"landmark_note":"","photo":""},
+
+  {"id":"cc-food-court","name":"CC Food Court","aliases":["cc","food court","canteen"],"block":"","floor":"","category":"food","group":"Food","priority":1,"icon":"food","lat":31.257739,"lng":75.708160,"landmark_note":"","photo":""},
+  {"id":"food-square-non-veg","name":"Food Square (Non-veg)","aliases":["food square","non veg","canteen"],"block":"","floor":"","category":"food","group":"Food","priority":2,"icon":"food","lat":31.256459,"lng":75.708219,"landmark_note":"","photo":""},
+  {"id":"buzz","name":"Buzz","aliases":["buzz cafe","food court"],"block":"","floor":"","category":"food","group":"Food","priority":2,"icon":"food","lat":31.252235,"lng":75.701884,"landmark_note":"","photo":""},
+  {"id":"cse-buzz-food-court","name":"CSE Buzz Food Court","aliases":["cse buzz","buzz","food court"],"block":"","floor":"","category":"food","group":"Food","priority":2,"icon":"food","lat":31.252364,"lng":75.701905,"landmark_note":"","photo":""},
+  {"id":"central-mess-1","name":"Central Mess 1","aliases":["mess","mess 1","canteen"],"block":"","floor":"","category":"food","group":"Food","priority":1,"icon":"food","lat":31.252313,"lng":75.701138,"landmark_note":"","photo":""},
+  {"id":"central-mess-2","name":"Central Mess 2","aliases":["mess","mess 2","canteen"],"block":"","floor":"","category":"food","group":"Food","priority":2,"icon":"food","lat":31.252061,"lng":75.700870,"landmark_note":"","photo":""},
+  {"id":"block-34-food-court","name":"Block 34 Food Court","aliases":["block 34 food","food court"],"block":"34","floor":"","category":"food","group":"Food","priority":2,"icon":"food","lat":31.250713,"lng":75.704486,"landmark_note":"","photo":""},
+  {"id":"boys-hostel-food-court","name":"Boys Hostel Food Court","aliases":["boys hostel food","food court"],"block":"","floor":"","category":"food","group":"Food","priority":2,"icon":"food","lat":31.250731,"lng":75.700548,"landmark_note":"","photo":""},
+  {"id":"food-factory-non-veg","name":"Food Factory (Non-Veg)","aliases":["food factory","non veg"],"block":"","floor":"","category":"food","group":"Food","priority":2,"icon":"food","lat":31.247782,"lng":75.698816,"landmark_note":"","photo":""},
+
+  {"id":"robo-park","name":"Robo Park","aliases":["park","robot park"],"block":"","floor":"","category":"sports","group":"Park","priority":2,"icon":"park","lat":31.253405,"lng":75.703413,"landmark_note":"","photo":""},
+
+  {"id":"division-of-admission-block","name":"Division of Admission Block","aliases":["admission","admissions","admission office"],"block":"","floor":"","category":"admin","group":"Admin","priority":1,"icon":"admin","lat":31.252809,"lng":75.704733,"landmark_note":"","photo":""},
+  {"id":"central-library","name":"Central Library","aliases":["library","books","reading room"],"block":"","floor":"","category":"academic","group":"Academic","priority":1,"icon":"library","lat":31.252130,"lng":75.703888,"landmark_note":"","photo":""},
+
+  {"id":"law-block","name":"Law Block","aliases":["law","school of law"],"block":"Law","floor":"","category":"academic","group":"Academic","priority":2,"icon":"academic","lat":31.254886,"lng":75.701353,"landmark_note":"","photo":""},
+  {"id":"phe-block","name":"PHE Block","aliases":["phe"],"block":"PHE","floor":"","category":"academic","group":"Academic","priority":2,"icon":"academic","lat":31.255258,"lng":75.703424,"landmark_note":"","photo":""},
+  {"id":"business-block","name":"Business Block","aliases":["business","management","mba"],"block":"Business","floor":"","category":"academic","group":"Academic","priority":2,"icon":"academic","lat":31.254765,"lng":75.705760,"landmark_note":"","photo":""},
+
+  {"id":"block-25","name":"Block 25","aliases":["b25"],"block":"25","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.252818,"lng":75.702565,"landmark_note":"","photo":""},
+  {"id":"block-26","name":"Block 26","aliases":["b26"],"block":"26","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.252818,"lng":75.702978,"landmark_note":"","photo":""},
+  {"id":"block-27","name":"Block 27","aliases":["b27"],"block":"27","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.252786,"lng":75.703391,"landmark_note":"","photo":""},
+  {"id":"block-28","name":"Block 28","aliases":["b28"],"block":"28","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.252790,"lng":75.703810,"landmark_note":"","photo":""},
+  {"id":"block-29","name":"Block 29","aliases":["b29"],"block":"29","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.252777,"lng":75.704234,"landmark_note":"","photo":""},
+  {"id":"block-32","name":"Block 32","aliases":["b32"],"block":"32","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.252121,"lng":75.704556,"landmark_note":"","photo":""},
+  {"id":"block-33","name":"Block 33","aliases":["b33"],"block":"33","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.251759,"lng":75.704598,"landmark_note":"","photo":""},
+  {"id":"block-34","name":"Block 34","aliases":["b34"],"block":"34","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.251479,"lng":75.704609,"landmark_note":"","photo":""},
+  {"id":"block-36","name":"Block 36","aliases":["b36"],"block":"36","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.251770,"lng":75.704285,"landmark_note":"","photo":""},
+  {"id":"block-37","name":"Block 37","aliases":["b37"],"block":"37","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.251914,"lng":75.703995,"landmark_note":"","photo":""},
+  {"id":"block-38","name":"Block 38","aliases":["b38"],"block":"38","floor":"","category":"academic","group":"CSE Blocks","priority":3,"icon":"academic","lat":31.252252,"lng":75.703308,"landmark_note":"","photo":""},
+
+  {"id":"block-55","name":"Block 55","aliases":["b55","biotech","agriculture"],"block":"55","floor":"","category":"academic","group":"Biotech / Agriculture Blocks","priority":3,"icon":"academic","lat":31.246902,"lng":75.703622,"landmark_note":"","photo":""},
+  {"id":"block-56","name":"Block 56","aliases":["b56","biotech","agriculture"],"block":"56","floor":"","category":"academic","group":"Biotech / Agriculture Blocks","priority":3,"icon":"academic","lat":31.246590,"lng":75.703654,"landmark_note":"","photo":""},
+  {"id":"block-57","name":"Block 57","aliases":["b57","biotech","agriculture"],"block":"57","floor":"","category":"academic","group":"Biotech / Agriculture Blocks","priority":3,"icon":"academic","lat":31.246315,"lng":75.703686,"landmark_note":"","photo":""},
+
+  {"id":"sports-complex","name":"Sports Complex","aliases":["sports","stadium"],"block":"","floor":"","category":"sports","group":"Sports","priority":1,"icon":"sports","lat":31.250539,"lng":75.702190,"landmark_note":"","photo":""},
+  {"id":"lpu-gym","name":"LPU Gym","aliases":["gym","fitness"],"block":"","floor":"","category":"sports","group":"Sports","priority":2,"icon":"sports","lat":31.250731,"lng":75.700859,"landmark_note":"","photo":""},
+  {"id":"gym","name":"Gym","aliases":["gym","fitness"],"block":"","floor":"","category":"sports","group":"Sports","priority":2,"icon":"sports","lat":31.251126,"lng":75.702163,"landmark_note":"","photo":""},
+  {"id":"cricket-ground","name":"Cricket Ground","aliases":["cricket","ground"],"block":"","floor":"","category":"sports","group":"Sports","priority":2,"icon":"sports","lat":31.247608,"lng":75.700318,"landmark_note":"","photo":""},
+  {"id":"basketball-court","name":"Basketball Court","aliases":["basketball","court"],"block":"","floor":"","category":"sports","group":"Sports","priority":3,"icon":"sports","lat":31.248544,"lng":75.701616,"landmark_note":"","photo":""},
+  {"id":"volleyball-court","name":"Volleyball Court","aliases":["volleyball","court"],"block":"","floor":"","category":"sports","group":"Sports","priority":3,"icon":"sports","lat":31.246792,"lng":75.702227,"landmark_note":"","photo":""}
+]
