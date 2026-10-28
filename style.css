@@ -354,25 +354,48 @@ body.sheet-full .fab-stack,
 body.sheet-full .lost-btn,
 body.sheet-open .lost-btn { opacity: 0; pointer-events: none; }
 
-/* Discreet "Test mode: S1" banner */
-.test-banner {
+/* Test mode chip: top-left under Filters. Its z-index is below the bottom sheet (1100),
+   so a full-height sheet slides over it instead of the chip covering the sheet. */
+.test-chip {
   position: fixed;
   left: 12px;
   top: calc(var(--top-inset) + 64px + env(safe-area-inset-top));
   z-index: 1050;
   max-width: calc(100% - 24px);
-  padding: 4px 10px;
+}
+.test-chip-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: none;
   border-radius: 999px;
-  background: rgba(17, 24, 39, 0.8);
+  background: rgba(28, 25, 23, 0.85);
   color: #fff;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  pointer-events: none;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
 }
+.rec-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: rec-blink 1.6s ease-in-out infinite; }
+@keyframes rec-blink { 50% { opacity: 0.35; } }
+.test-chip-panel {
+  width: 240px;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+.tcp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.tcp-events { max-height: 180px; overflow-y: auto; margin: 8px 0 0; padding: 0 0 0 4px; list-style: none; font-size: 13px; }
+.tcp-events li { padding: 3px 0; border-bottom: 1px solid var(--line); }
+.tcp-time { color: var(--muted); font-variant-numeric: tabular-nums; }
+.tcp-detail { color: #9a3412; font-weight: 600; }
+.tcp-empty { color: var(--muted); }
 
 /* Toast message */
 .toast {
@@ -1461,7 +1484,7 @@ body.admin-on .sheet-main { display: none; } /* the admin panel takes its place 
   .dir-top { left: 16px; right: auto; width: 340px; top: 16px; }
   .top-left { left: 372px; top: 16px; }
   .map-tools { right: 16px; top: 16px; }
-  .test-banner { left: 372px; top: 72px; max-width: 320px; }
+  .test-chip { left: 372px; top: 72px; }
   .toast { top: 80px; }
 
   /* Floating buttons sit on the map, clear of the panel */

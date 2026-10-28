@@ -4,7 +4,7 @@
 // ---------- Version check ----------
 // If the browser mixes an old cached page with new scripts (or the other way round),
 // features break in odd ways. Spot it and ask for a refresh instead.
-const APP_VERSION = "2026-10-26.3";
+const APP_VERSION = "2026-10-28.1";
 const PAGE_VERSION = document.querySelector('meta[name="app-version"]')?.content;
 if (PAGE_VERSION !== APP_VERSION) {
   console.warn("Page version", PAGE_VERSION, "≠ script version", APP_VERSION, "— stale cached files");

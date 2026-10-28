@@ -465,7 +465,11 @@ function logSearch(query) {
   clearTimeout(searchTimer);
   const q = String(query || "").trim();
   if (q.length < 2 || !testState.session) return;
-  searchTimer = setTimeout(() => logEvent("search", { query: q }), 1000);
+  searchTimer = setTimeout(() => {
+    const matches = searchPlaces(q).length; // routes.js
+    // Only keep the text if it's a place name, alias or block number — never anything else
+    logEvent("search_used", { query: matches ? q : "", results: matches });
+  }, 1000);
 }
 
 const testerCode = $("testerCode");
@@ -495,7 +499,13 @@ $("sessionBtn").addEventListener("click", () => {
     testState.session = { code, started: Date.now() };
     saveTestState();
     logEvent("session_start");
-    showToast(`Test session ${code} started.`);
+    // The admin panel replaces the home sheet (search, chips, routes). Close it so the
+    // tester sees the normal app; the corner chip has the log and export from here on.
+    if (adminToggle.checked) {
+      adminToggle.checked = false;
+      adminToggle.dispatchEvent(new Event("change"));
+    }
+    showToast(`Test session ${code} started. Hand over the phone — logging is on.`);
   }
   renderTestUi();
 });
@@ -534,11 +544,11 @@ function formatElapsed(seconds) {
 // Banner + panel status; ticks every second while a task runs
 function renderTestUi() {
   const { session, task } = testState;
-  const banner = $("testBanner");
-  banner.hidden = !session;
+  $("testChip").hidden = !session;
+  if (!session) closeTestChip();
   let timerText = "";
   if (task) timerText = `${task.label} · ${formatElapsed(Math.floor((Date.now() - task.started) / 1000))}`;
-  if (session) banner.textContent = `Test mode: ${session.code}${timerText ? ` · ${timerText}` : ""}`;
+  if (session) $("testChipText").textContent = `Test mode · ${session.code}${task ? ` · ${formatElapsed(Math.floor((Date.now() - task.started) / 1000))}` : ""}`;
 
   $("sessionBtn").textContent = session ? "End session" : "Start session";
   $("sessionBtn").classList.toggle("btn-primary", !session);
@@ -552,8 +562,39 @@ function renderTestUi() {
 }
 setInterval(() => { if (testState.task) renderTestUi(); }, 1000);
 
+// ---------- Corner chip: event log + export ----------
+function closeTestChip() {
+  $("testChipPanel").hidden = true;
+  $("testChipBtn").setAttribute("aria-expanded", "false");
+}
+$("testChipBtn").addEventListener("click", () => {
+  const open = $("testChipPanel").hidden;
+  $("testChipPanel").hidden = !open;
+  $("testChipBtn").setAttribute("aria-expanded", String(open));
+});
+// Last 10 events, newest first
+$("tcpLog").addEventListener("click", () => {
+  const list = $("tcpEvents");
+  const show = list.hidden;
+  list.hidden = !show;
+  $("tcpLog").setAttribute("aria-expanded", String(show));
+  if (!show) return;
+  const rows = loadJson(LOG_KEY, []).slice(-10).reverse();
+  list.innerHTML = rows.length
+    ? rows.map((r) => {
+        const detail = r.query || r.place_id || r.route_id || r.category || r.task || "";
+        return `<li><span class="tcp-time">${escapeHtml(new Date(r.time).toLocaleTimeString())}</span> ${escapeHtml(r.event)}${detail ? ` <span class="tcp-detail">${escapeHtml(detail)}</span>` : ""}</li>`;
+      }).join("")
+    : `<li class="tcp-empty">No events yet.</li>`;
+});
+$("tcpExport").addEventListener("click", () => $("exportLogBtn").click());
+// Tapping elsewhere folds the chip away
+document.addEventListener("click", (e) => {
+  if (!$("testChipPanel").hidden && !$("testChip").contains(e.target)) closeTestChip();
+});
+
 // ---------- CSV export ----------
-const LOG_COLUMNS = ["time", "tester", "event", "task", "elapsed_s", "place_id", "route_id", "step_index", "query", "category"];
+const LOG_COLUMNS = ["time", "tester", "event", "task", "elapsed_s", "place_id", "route_id", "step_index", "query", "results", "category"];
 const FEEDBACK_COLUMNS = ["time", "tester", "category", "note", "place_id", "route_id", "step_index"];
 
 function toCsv(rows, columns) {
